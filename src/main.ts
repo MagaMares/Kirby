@@ -1,4 +1,6 @@
+import { makePlayer } from "./entities";
 import { k } from "./kaboomCtx";
+import { makeMap } from "./utils";
 
 async function gameSteup() {
     k.loadSprite("assets", "./kirby-like.png", {
@@ -36,6 +38,36 @@ async function gameSteup() {
             },
         },
     });
+
+    k.loadSprite("level1", "./level1.png");
+
+    const { map: level1Layout, spawnPoints: level1SpawnPoints } = await makeMap(k, "level1");
+
+    k.scene("level1", () => {
+        k.setGravity(2100);
+        k.add([
+            k.rect(k.width(), k.height()),
+            k.color(k.Color.fromHex("#f7d7db")),
+            k.fixed()
+        ]);
+
+        k.add(level1Layout);
+
+        const kirb = makePlayer(
+            k,
+            level1SpawnPoints.player[0].x,
+            level1SpawnPoints.player[0].y
+        );
+
+        k.add(kirb);
+        k.camScale(k.vec2(0.7));
+        k.onUpdate(() => {
+            if (kirb.pos.x < level1Layout.pos.x + 432)
+                k.camPos(kirb.pos.x + 500, 800);
+        });
+    });
+
+    k.go("level1");
 }
 
- gameSteup() 
+gameSteup()
