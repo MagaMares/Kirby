@@ -3,17 +3,23 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "public/level1.json",
     "expandedProjectPaths": [
+        "public",
+        "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "kirby-like.tsx": {
+            "scaleInDock": 1.329,
+            "scaleInEditor": 3.6
+        },
         "public/level1.json": {
             "scale": 1.5107638888888888,
-            "selectedLayer": 3,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 216.44679384049644,
-                "y": 160.51482417834984
+                "x": 113.1877729257642,
+                "y": 80.09193288899101
             }
         },
         "public/level1.tmj": {
@@ -31,10 +37,12 @@
     "map.tileWidth": 16,
     "map.width": 27,
     "openFiles": [
+        "public/level1.json"
     ],
     "project": "Kirby map.tiled-project",
     "recentFiles": [
         "public/level1.json",
+        "kirby-like.tsx",
         "public/level1.tmj"
     ],
     "tileset.lastUsedFormat": "tsx",

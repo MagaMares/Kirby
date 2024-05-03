@@ -41,9 +41,12 @@ async function gameSteup() {
 
     k.loadSprite("level1", "./level1.png");
 
-    const { map: level1Layout, spawnPoints: level1SpawnPoints } = await makeMap(k, "level1");
+    const { map: level1Layout, spawnPoints: level1SpawnPoints } = await makeMap(
+        k, 
+        "level1"
+        );
 
-    k.scene("level1", () => {
+    k.scene("level1", async () => {
         k.setGravity(2100);
         k.add([
             k.rect(k.width(), k.height()),
